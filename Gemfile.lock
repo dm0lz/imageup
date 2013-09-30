@@ -61,6 +61,7 @@ GEM
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.0)
+    mysql2 (0.3.13)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -129,6 +130,7 @@ DEPENDENCIES
   exiftool_vendored
   jbuilder (~> 1.2)
   jquery-rails
+  mysql2
   pry-rails
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
