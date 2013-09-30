@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @picture.name %>
+</p>
+<p>
+	<%= image_tag @picture.image_url.to_s, :size => "100x100" %>
+</p>
+
+<p>Time Photo Taken : <%= @picture.timeTaken %></p>
+<p>Latitude : <%= @picture.latitude %></p>
+<p>Longitude : <%= @picture.longitude %></p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
