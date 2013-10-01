@@ -36,13 +36,16 @@ class PicturesController < ApplicationController
         e = Exiftool.new "#{Rails.root.to_s + "/public" + @picture.image.to_s}"
 
         model = e.to_hash[:model]
+
         @picture.timeTaken = e.to_hash[:date_time_original]
-        @picture.latitude = e.to_hash[:gps_longitude]
-        @picture.longitude = e.to_hash[:gps_latitude]
+        @picture.latitude = e.to_hash[:gps_latitude]
+        @picture.longitude = e.to_hash[:gps_longitude]
+        @picture.image_direction = e.to_hash[:gps_img_direction]
+
 
         @picture.save
 
-        binding.pry
+        #binding.pry
 
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
         format.json { render action: 'show', status: :created, location: @picture }
@@ -85,6 +88,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:name, :image, :latitude, :longitude, :timeTaken)
+      params.require(:picture).permit(:name, :image, :latitude, :longitude, :timeTaken, :image_direction)
     end
 end

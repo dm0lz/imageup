@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130930134906) do
+ActiveRecord::Schema.define(version: 20131001195155) do
 
   create_table "pictures", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130930134906) do
     t.string   "latitude"
     t.string   "longitude"
     t.datetime "timeTaken"
+    t.string   "image_direction"
   end
 
 end
